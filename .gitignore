@@ -1,3 +1,6 @@
 # Visual Code (vcode)
 .vscode/
 .idea/
+
+dist/
+**/node_modules/

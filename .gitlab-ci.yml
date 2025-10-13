@@ -1,0 +1,9 @@
+  image: node:lts
+  create-pages:
+    script:
+      - npm install
+      - npm run build
+    pages:
+      publish: dist
+    tags:
+      - docker
