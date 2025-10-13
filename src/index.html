@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./main/styles/main.css">
 </head>
 <body>
+<!--Шапка навигации-->
     <div>
         <ul id="navbar">
         <li><a href="./index.html" data-page="page1">Диктант 1</a>
@@ -21,17 +22,32 @@
         </ul>
     </div>
 
-    <div id="#" class="help-text">
-        <p>📎 Выберите в слове букву, на которую, как вы считаете, должно падать ударение. Вы можете выбирать только гласные буквы (а, е, ё, и, о, у, ы, э, ю, я) 📎</p>
+<!--Текст, для отображения какой диктант открыт-->
+    <div id="#" class="dictation-text">
+        <h2>Диктант №1</h2>
     </div>
 
+
+<!--Кружок с подсказкой-->
+    <div id="container-circle">
+        <div class="help-circle" data-tooltip="Выберите в слове букву, на которую, как вы считаете, должно падать ударение. Вы можете выбирать только гласные буквы (а, е, ё, и, о, у, ы, э, ю, я)">
+            ?
+        </div>
+        <script src="./main/scripts/circle_help.js"></script>
+    </div>
+
+
+
+
+
+<!--Фон страницы-->
     <div id="container">
         <div id="background" class="translucent"></div>
         <div id="content"></div>
     </div>
 
 
-
+<!--Орфо- слова, счетчики и кнопки передвижения в словах-->
     <div class="word-container" id="Container_world">
         <div class="progress">Слово <span id="currentWordIndex">1</span> из <span id="totalWords">5</span></div>
     
@@ -50,7 +66,6 @@
             <button class="btn next-btn" id="nextBtn">Далее</button>
         </div>
         <script src="./main/scripts/main.js"></script>
-        
     </div>
 </body>
 </html>
