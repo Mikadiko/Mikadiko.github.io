@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра в орфоэпический словарь</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+<div>
+    <ul id="navbar">
+        <li><a href="tml" data-page="page1">Диктант 1</a>
+            <ul>
+                <li><a href="on_2.html" data-page="page2">Диктант 2</a></li>
+                <li><a href="/dictation_3.html" data-page="page3">Диктант 3</a></li>
+            </ul>
+        </li>
+        <li><a href="#" data-page="page_news">Новости</a></li>
+        <li><a href="#" data-page="page_contacts">Контакты</a></li>
+        <li><a href="#" data-page="page_about_Us">О нас</a></li>
+    </ul>
+</div>
+
+<div id="#" class="help-text">
+    <p>📎 Выберите в слове букву, на которую, как вы считаете, должно падать ударение. Вы можете выбирать только гласные буквы (а, е, ё, и, о, у, ы, э, ю, я) 📎</p>
+</div>
+
+<div id="container">
+    <div id="background" class="translucent"></div>
+    <div id="content"></div>
+</div>
+
+
+
+<div class="word-container" id="Container_world">
+    <div class="progress">Слово <span id="currentWordIndex">1</span> из <span id="totalWords">5</span></div>
+
+    <div class="word-container" id="wordContainer"></div>
+
+    <div class="message" id="message"></div>
+
+    <div class="stats">
+        Выполнено: <span id="correctCount">0</span> |
+        Неправильных: <span id="incorrectCount">0</span>
+    </div>
+
+    <div class="button-container">
+        <button class="btn reset-btn" id="resetBtn">Начать сначала</button>
+        <button class="btn prev-btn" id="prevBtn">Назад</button>
+        <button class="btn next-btn" id="nextBtn">Далее</button>
+    </div>
+    <script src="../scripts/main_3.js"></script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+#navbar ul { /*пункты выдвижные */
+    display: none; /* Скрываем подменю по умолчанию */
+    background-color: #ab8989;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100%; /* Располагается прямо под родителем */
+}
+#navbar li:hover ul {
+    display: block;
+} /* Показываем подменю при наведении */
+#navbar, #navbar ul {
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    list-style-type: none; /* Убираем маркеры списка */
+}
+#navbar {
+    height: 30px;
+    background-color: #734848;
+    padding-left: 25px; /* Отступ слева */
+    min-width: 470px; /* Минимальная ширина */
+}
+#navbar li {
+    float: left; /* Горизонтальное расположение */
+    position: relative; /* Для позиционирования подменю */
+    height: 100%; /* Занимает всю высоту родителя */
+}
+#navbar li a {
+    display: block; /* Блочное отображение */
+    padding: 6px; /* Внутренние отступы */
+    width: 100px;
+    color: #fff;
+    text-decoration: none; /* Без подчёркивания */
+    text-align: center; /* Выравнивание по центру */
+}
+a[data-page="page_news"]:hover {
+    cursor: not-allowed;
+}
+a[data-page="page_contacts"]:hover {
+    cursor: not-allowed;
+}
+a[data-page="page_about_Us"]:hover {
+    cursor: not-allowed;
+}
+#navbar ul li {
+    float: none;
+} /* Отменяем горизонтальное расположение */
+#navbar li:hover {
+    background-color: #ab8989;
+}
+#navbar ul li:hover {
+    background-color: #734848;
+}
+.help-text {
+    color: #391212;
+    font-size: 20px;
+}
+
+
+div.translucent {
+    content: "";
+    background-image: url(../img/fon.jpg);
+    background-size: cover;
+    opacity: 0.2;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Container_world {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+.word-container {
+    font-size: 32px;
+    margin: 30px 0;
+    letter-spacing: 5px;
+    min-height: 50px;
+}
+.letter {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 3px;
+}
+.letter:hover {  /*при наведении на гласную букву*/
+    background-color: #f0f0f0;
+}
+.letter.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.letter.disabled:hover {
+    background-color: transparent;
+}
+.letter.consonant {
+    cursor: default;
+}
+.letter.consonant:hover {
+    background-color: transparent;
+}
+.correct {
+    color: #2ecc71;
+    font-weight: bold;
+    background-color: #e8f8ef;
+}
+.incorrect {
+    color: #e74c3c;
+    font-weight: bold;
+    background-color: #fdedec;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.btn {
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.prev-btn {
+    background-color: #9b59b6;
+}
+.prev-btn:hover {
+    background-color: #8e44ad;
+}
+.prev-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+.next-btn {
+    background-color: #3498db;
+}
+.next-btn:hover {
+    background-color: #2980b9;
+}
+.next-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+.reset-btn {
+    background-color: #e67e22;
+}
+.reset-btn:hover {
+    background-color: #d35400;
+}
+.stats {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #555;
+}
+.message {
+    margin: 15px 0;
+    min-height: 24px;
+    font-weight: bold;
+}
+.success-message {
+    color: #2ecc71;
+}
+.error-message {
+    color: #e74c3c;
+}
+.progress {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #7f8c8d;
+}
