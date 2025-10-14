@@ -186,7 +186,7 @@
 
 .translucent {
     /*content: "";*/
-    background-image: url(../img/fon.jpg);
+    background-image: url(../img/buble_3.png);
     background-size: cover;
     opacity: 0.2;
     position: absolute;
