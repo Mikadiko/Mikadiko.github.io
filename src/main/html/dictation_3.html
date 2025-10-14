@@ -7,20 +7,44 @@
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-<div>
-    <!--Шапка навигации-->
-    <ul id="navbar">
-        <li><a href="../../index.html" data-page="page1">Диктант 1</a>
-            <ul>
-                <li><a href="../html/dictation_2.html" data-page="page2">Диктант 2</a></li>
-                <li><a href="../html/dictation_3.html" data-page="page3">Диктант 3</a></li>
-            </ul>
-        </li>
-        <li><a href="#" data-page="page_news">Новости</a></li>
-        <li><a href="#" data-page="page_contacts">Контакты</a></li>
-        <li><a href="#" data-page="page_about_Us">О нас</a></li>
-    </ul>
-</div>
+<!--Шапка навигации-->
+<nav class="modern-nav">
+    <div class="nav-container">
+        <div class="nav-links">
+            <div class="nav-group">
+                <a href="../../index.html" class="nav-link">
+                    <span class="icon">📄</span>
+                    Диктант 1
+                </a>
+                <div class="nav-submenu">
+                    <a href="../html/dictation_2.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 2
+                    </a>
+                    <a href="../html/dictation_3.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 3
+                    </a>
+                </div>
+            </div>
+
+            <a href="#" class="nav-link coming-soon">
+                <span class="icon">📚</span>
+                Словарные слова
+            </a>
+
+            <a href="#" class="nav-link coming-soon">
+                <span class="icon">⚙️</span>
+                Настройки
+            </a>
+
+            <a href="#" class="nav-link coming-soon">
+                <span class="icon">🎨</span>
+                Фон
+            </a>
+        </div>
+    </div>
+</nav>
 <!--Текст, для отображения какой диктант открыт-->
 <div id="#" class="dictation-text">
     <h2>Диктант №3</h2>
