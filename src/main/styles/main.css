@@ -184,7 +184,7 @@
         border: 6px solid transparent;
     }
 
-.translucent {
+.translucent { /* Фон по умолчанию для ПК */
     /*content: "";*/
     background-image: url(../img/buble_3.png);
     background-size: cover;
@@ -195,7 +195,28 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+@media (max-width: 768px) { /* Для мобильных устройств (ширина до 768px) */
+    body {
+        background-color: transparent;
+    }
 }
+@media (max-device-width: 768px) and (orientation: portrait) { /* Альтернативно можно использовать ориентацию */
+    body {
+        background-color: transparent;
+    }
+}
+
+@media (max-device-width: 768px) and (orientation: landscape) {
+    body {
+        background-color: transparent;
+    }
+}
+
+
+
 
 #Container_world {
     font-family: Arial, sans-serif;
