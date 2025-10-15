@@ -1,4 +1,4 @@
-.modern-nav {
+.modern-nav { /* панель навигации */
     background: #734848;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     font-family: Arial, sans-serif;
@@ -118,8 +118,6 @@
         transform: translateY(0);
     }
 }
-
-
 @media (max-width: 480px) { /* Для очень маленьких экранов */
     .nav-link {
         min-width: 50px;
@@ -136,53 +134,11 @@
     }
 }
 
-.dictation-text {
+.dictation-text { /* текст с номером диктанта */
         color: #391212;
 }
 
-.help-circle {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background-color: #485e73;
-    color: white;
-    border-radius: 50%;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: help;
-    margin: 20px;
-    user-select: none;
-    transition: background-color 0.2s;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    }
-    .help-circle:hover {
-        background-color: #3e5062;
-    }
-    .tooltip { /* Стили для динамически создаваемой подсказки */
-        position: fixed;
-        max-width: 250px;
-        background-color: #3e5062;
-        color: white;
-        text-align: center;
-        border-radius: 6px;
-        padding: 10px 12px;
-        z-index: 10000;
-        font-size: 14px;
-        line-height: 1.4;
-        word-wrap: break-word;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    .tooltip-arrow {
-        position: absolute;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-    }
+
 
 .translucent { /* Фон по умолчанию для ПК */
     /*content: "";*/
@@ -231,6 +187,49 @@
         letter-spacing: 5px;
         min-height: 50px;
         }
+    .help-circle { /* Кружок с подсказкой*/
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 24px;
+        height: 24px;
+        background-color: #485e73;
+        color: white;
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: help;
+        margin: 20px;
+        user-select: none;
+        transition: background-color 0.2s;
+        top: 10%;
+        /*left: 45%;*/
+        /*transform: translate(-50%, -50%);*/
+    }
+    .help-circle:hover {
+        background-color: #3e5062;
+    }
+    .tooltip { /* Стили для динамически создаваемой подсказки */
+        position: fixed;
+        max-width: 250px;
+        background-color: #3e5062;
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px 12px;
+        z-index: 10000;
+        font-size: 14px;
+        line-height: 1.4;
+        word-wrap: break-word;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .tooltip-arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+    }
     .letter {
         cursor: pointer;
         transition: all 0.3s ease;

@@ -51,15 +51,6 @@
 </div>
 
 
-<!--Кружок с подсказкой-->
-<div id="container-circle">
-    <div class="help-circle" data-tooltip="Выберите в слове букву, на которую, как вы считаете, должно падать ударение. Вы можете выбирать только гласные буквы (а, е, ё, и, о, у, ы, э, ю, я)">
-        ?
-    </div>
-    <script src="../scripts/circle_help.js"></script>
-</div>
-
-
 
 
 
@@ -72,6 +63,14 @@
 
 <!--Орфо- слова, счетчики и кнопки передвижения в словах-->
 <div class="word-container" id="Container_world">
+    <!--Кружок с подсказкой-->
+    <div id="container-circle">
+        <div class="help-circle" data-tooltip="Выберите в слове букву, на которую, как вы считаете, должно падать ударение. Вы можете выбирать только гласные буквы (а, е, ё, и, о, у, ы, э, ю, я)">
+            ?
+        </div>
+        <script src="../scripts/circle_help.js"></script>
+    </div>
+
     <div class="progress">Слово <span id="currentWordIndex">1</span> из <span id="totalWords">5</span></div>
 
     <div class="word-container" id="wordContainer"></div>
