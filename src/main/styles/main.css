@@ -177,17 +177,18 @@
     padding: 10px;
     text-align: center;
     }
-    .word-container {
-        font-size: 32px;
-        margin: 30px 0;
-        letter-spacing: 5px;
-        min-height: 50px;
-        }
-    .help-circle { /* Кружок с подсказкой*/
+    #container-circle {
         position: relative;
+        width: 100%; /* Добавьте эту строку */
+        height: 40px;
+        margin-bottom: 10px;
+        text-align: center; /* И эту для подстраховки */
+    }
+    .help-circle { /* Кружок с подсказкой*/
+        position: absolute;
         display: inline-flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         width: 24px;
         height: 24px;
         background-color: #485e73;
@@ -200,8 +201,8 @@
         user-select: none;
         transition: background-color 0.2s;
         top: 10%;
-        /*left: 45%;*/
-        /*transform: translate(-50%, -50%);*/
+        left: 45.5%;
+        transform: translate(-50%, -50%);
     }
     .help-circle:hover {
         background-color: #3e5062;
@@ -225,6 +226,13 @@
         width: 0;
         height: 0;
         border: 6px solid transparent;
+    }
+    .word-container {
+        font-size: clamp(20px, 5vw, 32px);
+        /* Минимум: 20px, Идеально: 5% ширины экрана, Максимум: 32px */
+        margin: clamp(15px, 4vw, 30px) 0;
+        min-height: clamp(40px, 8vw, 50px);
+        font-weight: bold;
     }
     .letter {
         cursor: pointer;
