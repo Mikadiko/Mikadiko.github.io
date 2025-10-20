@@ -11,12 +11,17 @@
 <nav class="modern-nav">
     <div class="nav-container">
         <div class="nav-links">
-            <div class="nav-group">
-                <a href="../../index.html" class="nav-link">
+            <!-- Группа с диктантами -->
+            <div class="nav-group" id="dictations-group">
+                <a href="#" class="nav-link has-submenu">
                     <span class="icon">📄</span>
-                    Диктант 1
+                    Диктанты
                 </a>
-                <div class="nav-submenu">
+                <div class="nav-submenu" id="dictations-menu">
+                    <a href="../../index.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 1
+                    </a>
                     <a href="../html/dictation_2.html" class="nav-sublink">
                         <span class="icon">📄</span>
                         Диктант 2
@@ -25,9 +30,38 @@
                         <span class="icon">📄</span>
                         Диктант 3
                     </a>
+                    <a href="../html/dictation_4.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 4
+                    </a>
+                    <a href="../html/dictation_5.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 5
+                    </a>
+                    <a href="../html/dictation_6.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 6
+                    </a>
+                    <a href="../html/dictation_7.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 7
+                    </a>
+                    <a href="../html/dictation_8.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 8
+                    </a>
+                    <a href="../html/dictation_9.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 9
+                    </a>
+                    <a href="../html/dictation_10.html" class="nav-sublink">
+                        <span class="icon">📄</span>
+                        Диктант 10
+                    </a>
                 </div>
             </div>
 
+            <!-- Остальные кнопки -->
             <a href="#" class="nav-link coming-soon">
                 <span class="icon">📚</span>
                 Словарные слова
@@ -44,6 +78,7 @@
             </a>
         </div>
     </div>
+    <script src="../scripts/navigation_bar.js"></script>
 </nav>
 
 
@@ -57,16 +92,18 @@
     <div id="content"></div>
 </div>
 
+<!--Кружок с подсказкой-->
+<div id="container-circle">
+    <div class="help-circle" data-tooltip="Выберите в слове букву, на которую, как вы считаете, должно падать ударение. Вы можете выбирать только гласные буквы (а, е, ё, и, о, у, ы, э, ю, я)">
+        ?
+    </div>
+    <script src="../scripts/circle_help.js"></script>
+</div>
+
 
 <!--Орфо- слова, счетчики и кнопки передвижения в словах-->
 <div class="word-container" id="Container_world">
-    <!--Кружок с подсказкой-->
-    <div id="container-circle">
-        <div class="help-circle" data-tooltip="Выберите в слове букву, на которую, как вы считаете, должно падать ударение. Вы можете выбирать только гласные буквы (а, е, ё, и, о, у, ы, э, ю, я)">
-            ?
-        </div>
-        <script src="../scripts/circle_help.js"></script>
-    </div>
+
 
     <div class="progress">Диктант №2 Слово <span id="currentWordIndex">1</span> из <span id="totalWords">5</span></div>
 
