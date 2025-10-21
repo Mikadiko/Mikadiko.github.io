@@ -1,33 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const dictationsLink = document.querySelector('.nav-link.has-submenu');
-    const dictationsMenu = document.getElementById('dictations-menu');
+    const dictationsLink = document.querySelector('.dictations-link');
+
+    if (!dictationsLink) {
+        console.log('Диктанты ссылка не найдена');
+        return;
+    }
 
     dictationsLink.addEventListener('click', function(event) {
-        if (window.innerWidth > 768) return;
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
 
-        event.preventDefault();
-        event.stopPropagation();
+            const currentPage = window.location.pathname.split('/').pop();
+            console.log('Текущая страница:', currentPage);
 
-        const isOpen = dictationsMenu.classList.contains('mobile-open');
+            let menuPath;
+            if (currentPage && currentPage.startsWith('dictation_')) {
+                // Страница диктанта
+                menuPath = '../html/dictations_mobile_menu.html';
+            } else {
+                // Главная страница или другие страницы
+                menuPath = './main/html/dictations_mobile_menu.html';
+            }
 
-        if (isOpen) {
-            dictationsMenu.classList.remove('mobile-open');
-            dictationsLink.classList.remove('mobile-open');
-        } else {
-            dictationsMenu.classList.add('mobile-open');
-            dictationsLink.classList.add('mobile-open');
-        }
-    });
-
-    document.addEventListener('click', function(event) {
-        if (window.innerWidth > 768) return;
-
-        const isOpen = dictationsMenu.classList.contains('mobile-open');
-        if (!isOpen) return;
-
-        if (!dictationsMenu.contains(event.target) && event.target !== dictationsLink) {
-            dictationsMenu.classList.remove('mobile-open');
-            dictationsLink.classList.remove('mobile-open');
+            console.log('Переход на:', menuPath);
+            window.location.href = menuPath;
         }
     });
 });

@@ -12,7 +12,6 @@
     justify-content: center;
     align-items: center;
     height: 70px;
-    position: relative;
 }
 
 .nav-links {
@@ -45,12 +44,6 @@
 
 .nav-link:hover:not(.coming-soon) {
     background: #623e3e;
-}
-
-.nav-text {
-    font-size: 0.8rem;
-    line-height: 1.2;
-    white-space: nowrap;
 }
 
 .nav-submenu {
@@ -96,6 +89,21 @@
 
 /* Мобильная версия */
 @media (max-width: 768px) {
+    /* Полностью скрываем подменю на мобильных */
+    .nav-submenu {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    /* Отключаем hover-эффекты для подменю */
+    .nav-group:hover .nav-submenu {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    /* Стили для мобильной навигации */
     .nav-container {
         height: 60px;
         padding: 0 0.5rem;
@@ -107,16 +115,11 @@
         width: 100%;
     }
 
-    .nav-group {
-        position: relative;
-    }
-
     .nav-link {
         min-width: 60px;
         max-width: 70px;
         padding: 0.4rem 0.3rem;
         gap: 0.2rem;
-        cursor: pointer;
     }
 
     .nav-text {
@@ -126,39 +129,6 @@
 
     .icon {
         font-size: 1rem;
-    }
-
-    .nav-submenu {
-        min-width: 140px;
-        left: 50%;
-        transform: translateX(-50%) translateY(10px);
-    }
-
-    .nav-group:hover .nav-submenu {
-        transform: translateX(-50%) translateY(0);
-    }
-
-    .nav-sublink {
-        padding: 0.6rem 0.8rem;
-    }
-
-    /* Стрелка для индикации подменю */
-    .nav-link.has-submenu::after {
-        content: '▼';
-        font-size: 0.6rem;
-        margin-left: 2px;
-        transition: transform 0.3s ease;
-    }
-
-    /* Класс для открытого состояния */
-    .nav-submenu.mobile-open {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateX(-50%) translateY(0) !important;
-    }
-
-    .nav-link.has-submenu.mobile-open::after {
-        transform: rotate(180deg);
     }
 }
 
@@ -175,21 +145,6 @@
 
     .icon {
         font-size: 0.9rem;
-    }
-
-    .nav-submenu {
-        min-width: 130px;
-    }
-
-    .nav-sublink {
-        padding: 0.5rem 0.7rem;
-    }
-}
-
-/* На PC скрываем мобильные элементы */
-@media (min-width: 769px) {
-    .nav-link.has-submenu::after {
-        display: none;
     }
 }
 
