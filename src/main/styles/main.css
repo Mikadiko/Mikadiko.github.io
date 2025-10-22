@@ -188,7 +188,7 @@
 
 
 
-#circle-help-container { /* Кружок с подсказкой */
+.circle-help-container { /* Кружок с подсказкой */
     display: flex;
     justify-content: center;
     align-items: center;
