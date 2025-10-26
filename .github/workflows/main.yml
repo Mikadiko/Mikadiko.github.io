@@ -31,9 +31,14 @@ jobs:
           npm ci
           npm run build
 
-      - name: Publish to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload artifacts for deployment job
+        uses: actions/upload-artifact@v3
         with:
-          publish_dir: ./dist
+          name: dist
+          path: dist/
+
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v4.0.5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: dist
