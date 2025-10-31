@@ -62,12 +62,32 @@
                 </div>
             </div>
 
-            <!-- Остальные кнопки -->
-            <a href="#" class="nav-link coming-soon">
-                <span class="icon">📚</span>
-                Словарные слова
-            </a>
-
+            <!-- Группа с множественным числом -->
+            <div class="nav-group">
+                <a href="#" class="nav-link plural-link">
+                    <span class="icon">📚</span>
+                    Мн.ч. Р.п.
+                </a>
+                <div class="nav-submenu">
+                    <a href="../src/main/html/game_2/plural_game.html" class="nav-sublink">
+                        <span class="icon">🔤</span>
+                        Базовые слова
+                    </a>
+                    <a href="#" class="nav-sublink">
+                        <span class="icon">⚠️</span>
+                        Исключения
+                    </a>
+                    <a href="#" class="nav-sublink">
+                        <span class="icon">🎯</span>
+                        Сложные случаи
+                    </a>
+                    <a href="#" class="nav-sublink">
+                        <span class="icon">🔀</span>
+                        Все слова
+                    </a>
+                </div>
+            </div>
+            <!--Остальные кнопки-->
             <a href="#" class="nav-link coming-soon">
                 <span class="icon">⚙️</span>
                 Настройки
@@ -110,16 +130,16 @@
         <!-- Основной контент -->
         <div class="word-content">
             <div class="progress">Диктант №1 Слово <span id="currentWordIndex">1</span> из <span id="totalWords">5</span></div>
-    
+
             <div class="word-container" id="wordContainer"></div>
-    
+
             <div class="message" id="message"></div>
-    
+
             <div class="stats">
                 Выполнено: <span id="correctCount">0</span> |
                 Неправильных: <span id="incorrectCount">0</span>
             </div>
-    
+
             <div class="button-container">
                 <button class="btn reset-btn" id="resetBtn">Начать сначала</button>
                 <button class="btn prev-btn" id="prevBtn">Назад</button>

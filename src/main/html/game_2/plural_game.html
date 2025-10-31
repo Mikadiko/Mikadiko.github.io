@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Множественное число</title>
+    <link rel="stylesheet" href="../../styles/game_2_styles/plural_game.css">
+</head>
+<body>
+<!--Шапка навигации-->
+<div class="navigation_bar">
+    <nav class="modern-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <!-- Группа с диктантами -->
+                <div class="nav-group">
+                    <a href="#" class="nav-link dictations-link">
+                        <span class="icon">📄</span>
+                        Диктанты
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="../../../index.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 1
+                        </a>
+                        <a href="../dictation_2.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 2
+                        </a>
+                        <a href="../dictation_3.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 3
+                        </a>
+                        <a href="../dictation_4.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 4
+                        </a>
+                        <a href="../dictation_5.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 5
+                        </a>
+                        <a href="../dictation_6.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 6
+                        </a>
+                        <a href="../dictation_7.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 7
+                        </a>
+                        <a href="../dictation_8.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 8
+                        </a>
+                        <a href="../dictation_9.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 9
+                        </a>
+                        <a href="../dictation_10.html" class="nav-sublink">
+                            <span class="icon">📄</span>
+                            Диктант 10
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Группа с множественным числом -->
+                <div class="nav-group">
+                    <a href="#" class="nav-link plural-link">
+                        <span class="icon">📚</span>
+                        Мн.ч. Р.п.
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="./plural_game.html" class="nav-sublink">
+                            <span class="icon">🔤</span>
+                            Базовые слова
+                        </a>
+                        <a href="#" class="nav-sublink">
+                            <span class="icon">⚠️</span>
+                            Исключения
+                        </a>
+                        <a href="#" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Сложные случаи
+                        </a>
+                        <a href="#" class="nav-sublink">
+                            <span class="icon">🔀</span>
+                            Все слова
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Остальные кнопки -->
+                <a href="#" class="nav-link coming-soon">
+                    <span class="icon">⚙️</span>
+                    Настройки
+                </a>
+
+                <a href="#" class="nav-link coming-soon">
+                    <span class="icon">🎨</span>
+                    Фон
+                </a>
+            </div>
+        </div>
+    </nav>
+    <script src="../../scripts/navigation_bar.js"></script>
+</div>
+
+
+<!--Фон страницы-->
+<div id="container">
+    <div id="background" class="translucent"></div>
+    <div id="content"></div>
+</div>
+
+
+<!--Кружок с подсказкой-->
+<div class="circle-help-container">
+    <div class="help-circle" data-tooltip="Напишите слово во множественном числе родительном падеже">
+        ?
+    </div>
+    <script src="../../scripts/circle_help.js"></script>
+</div>
+
+
+<!--Орфо- слова, счетчики и кнопки передвижения в словах-->
+<!-- Основной контейнер игры -->
+<div class="game-container">
+    <!-- Основной контент -->
+    <div class="word-content">
+        <div class="progress">Слово <span id="currentWordIndex">1</span> из <span id="totalWords">20</span></div>
+
+        <div class="word-container" id="wordContainer"></div>
+
+        <div class="input-container">
+            <input type="text" id="pluralInput" placeholder="Введите слово" autocomplete="off">
+            <button class="btn check-btn" id="checkBtn">Проверить</button>
+        </div>
+
+        <div class="message" id="message"></div>
+
+        <div class="stats">
+            <span class="stat-correct">Правильно: <span id="correctCount">0</span></span> |
+            <span class="stat-incorrect">Неправильных: <span id="incorrectCount">0</span></span>
+        </div>
+
+        <div class="button-container">
+            <button class="btn reset-btn" id="resetBtn">Начать сначала</button>
+            <button class="btn prev-btn" id="prevBtn">Назад</button>
+            <button class="btn next-btn" id="nextBtn">Далее</button>
+        </div>
+
+        <!-- Подключаем скрипт с указанием набора слов через data-атрибут -->
+        <script src="../../scripts/game_2_js/plural_game.js" data-word-set="basic"></script>
+    </div>
+</div>
+</body>
+</html>
