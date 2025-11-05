@@ -2,26 +2,55 @@ document.addEventListener('DOMContentLoaded', function() {
     const dictationsLink = document.querySelector('.dictations-link');
     const pluralLink = document.querySelector('.plural-link');
 
+    // Функция для определения правильного пути
+    function getCorrectPath(targetPage) {
+        const currentPath = window.location.pathname;
+        const isInGame2 = currentPath.includes('/game_2/');
+        const isInMain = currentPath.includes('/main/');
+
+        console.log('Текущий путь:', currentPath);
+        console.log('В game_2:', isInGame2);
+        console.log('В main:', isInMain);
+
+        if (isInGame2) {
+            // Находимся в папке game_2
+            if (targetPage === 'dictations') {
+                return '../dictations_mobile_menu.html';
+            } else if (targetPage === 'plural') {
+                return 'plural_game_mobile_menu.html';
+            }
+        } else if (isInMain) {
+            // Находимся в папке main
+            if (targetPage === 'dictations') {
+                return 'dictations_mobile_menu.html';
+            } else if (targetPage === 'plural') {
+                return './game_2/plural_game_mobile_menu.html';
+            }
+        } else {
+            // На главной или в корне
+            if (targetPage === 'dictations') {
+                return './main/html/dictations_mobile_menu.html';
+            } else if (targetPage === 'plural') {
+                return './main/html/game_2/plural_game_mobile_menu.html';
+            }
+        }
+
+        return '#';
+    }
+
     // Обработчик для кнопки "Диктанты"
     if (dictationsLink) {
         dictationsLink.addEventListener('click', function(event) {
             if (window.innerWidth <= 768) {
                 event.preventDefault();
+                event.stopPropagation();
 
-                const currentPage = window.location.pathname.split('/').pop();
-                console.log('Текущая страница:', currentPage);
+                const menuPath = getCorrectPath('dictations');
+                console.log('Переход в диктанты:', menuPath);
 
-                let menuPath;
-                if (currentPage && currentPage.startsWith('dictation_')) {
-                    // Страница диктанта
-                    menuPath = 'dictations_mobile_menu.html';
-                } else {
-                    // Главная страница или другие страницы
-                    menuPath = './main/html/dictations_mobile_menu.html';
+                if (menuPath !== '#') {
+                    window.location.href = menuPath;
                 }
-
-                console.log('Переход на:', menuPath);
-                window.location.href = menuPath;
             }
         });
     }
@@ -33,28 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 event.preventDefault();
                 event.stopPropagation();
 
-                const currentPage = window.location.pathname.split('/').pop();
-                console.log('Текущая страница для мн.ч.:', currentPage);
+                const menuPath = getCorrectPath('plural');
+                console.log('Переход в мн.ч.:', menuPath);
 
-                let menuPath;
-
-                // Всегда переходим на страницу выбора наборов слов
-                if (currentPage && currentPage.startsWith('dictation_')) {
-                    // Со страницы диктанта
-                    menuPath = './game_2/plural_game_mobile_menu.html';
-                } else if (currentPage === 'index.html' || !currentPage) {
-                    // С главной страницы
-                    menuPath = './main/html/game_2/plural_game_mobile_menu.html';
-                } else if (currentPage === 'plural_game.html') {
-                    // Со страницы игры
-                    menuPath = 'plural_game_mobile_menu.html';
-                } else {
-                    // С других страниц
-                    menuPath = './game_2/plural_game_mobile_menu.html';
+                if (menuPath !== '#') {
+                    window.location.href = menuPath;
                 }
-
-                console.log('Переход на страницу выбора наборов:', menuPath);
-                window.location.href = menuPath;
             }
         });
     }

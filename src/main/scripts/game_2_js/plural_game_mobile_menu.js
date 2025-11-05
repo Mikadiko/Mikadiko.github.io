@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     wordSetLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault(); // Отменяем стандартный переход
+            e.preventDefault();
 
             const setName = this.getAttribute('data-set');
             console.log('Выбран набор:', setName);
@@ -12,8 +12,23 @@ document.addEventListener('DOMContentLoaded', function() {
             // Сохраняем выбранный набор в localStorage
             localStorage.setItem('selectedWordSet', setName);
 
-            // Переходим на страницу игры
-            window.location.href = `plural_game.html?set=${setName}`;
+            // Определяем правильный путь для перехода
+            const currentPath = window.location.pathname;
+            let gamePath;
+
+            if (currentPath.includes('/game_2/')) {
+                // Уже в папке game_2
+                gamePath = `plural_game.html?set=${setName}`;
+            } else if (currentPath.includes('/main/')) {
+                // В папке main
+                gamePath = `./game_2/plural_game.html?set=${setName}`;
+            } else {
+                // В корне или других местах
+                gamePath = `./main/html/game_2/plural_game.html?set=${setName}`;
+            }
+
+            console.log('Переход на:', gamePath);
+            window.location.href = gamePath;
         });
     });
 

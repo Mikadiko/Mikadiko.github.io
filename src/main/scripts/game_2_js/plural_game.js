@@ -150,8 +150,21 @@ class PluralGame {
                 const setName = e.target.closest('.nav-sublink').dataset.set;
                 console.log('Выбран набор:', setName);
                 this.loadWordSet(setName);
+
+                // Обновляем URL без перезагрузки страницы
+                const newUrl = `${window.location.pathname}?set=${setName}`;
+                window.history.pushState({}, '', newUrl);
             });
         });
+
+        // Обработчик для кнопки "Мн.ч. Р.п." в мобильной версии
+        const pluralLink = document.querySelector('.plural-link');
+        if (pluralLink && window.innerWidth <= 768) {
+            pluralLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Навигация обрабатывается в navigation_bar.js
+            });
+        }
 
         // Автофокус на поле ввода при загрузке
         this.pluralInput.focus();
