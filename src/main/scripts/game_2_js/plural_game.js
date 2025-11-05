@@ -2,9 +2,13 @@ class PluralGame {
     constructor() {
         this.wordSets = this.initializeWordSets();
 
-        // Получаем начальный набор из data-атрибута
-        const scriptElement = document.querySelector('script[data-word-set]');
-        this.currentSet = scriptElement ? scriptElement.getAttribute('data-word-set') : 'basic';
+        // Получаем набор из параметров URL или localStorage
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlSet = urlParams.get('set');
+        const savedSet = localStorage.getItem('selectedWordSet');
+
+        // Приоритет: URL параметр > сохраненный набор > базовый набор
+        this.currentSet = urlSet || savedSet || 'basic';
 
         this.words = [];
         this.currentIndex = 0;
@@ -47,19 +51,32 @@ class PluralGame {
                 { singular: "злыдни", plural: "злыдней" },
                 { singular: "няня", plural: "нянь" },
                 { singular: "поверье", plural: "поверий" },
-
             ],
 
             exceptions: [
                 { singular: "ребёнок", plural: "дети" },
                 { singular: "человек", plural: "люди" },
                 { singular: "друг", plural: "друзья" },
+                { singular: "сын", plural: "сыновья" },
+                { singular: "дерево", plural: "деревья" },
+                { singular: "перо", plural: "перья" },
+                { singular: "колос", plural: "колосья" },
+                { singular: "стул", plural: "стулья" },
+                { singular: "лист", plural: "листья" },
+                { singular: "брат", plural: "братья" },
             ],
 
             complex: [
                 { singular: "адрес", plural: "адреса" },
                 { singular: "директор", plural: "директора" },
                 { singular: "профессор", plural: "профессора" },
+                { singular: "доктор", plural: "доктора" },
+                { singular: "паспорт", plural: "паспорта" },
+                { singular: "том", plural: "тома" },
+                { singular: "корпус", plural: "корпуса" },
+                { singular: "кузов", plural: "кузова" },
+                { singular: "учитель", plural: "учителя" },
+                { singular: "мастер", plural: "мастера" },
             ],
 
             all: []
@@ -103,6 +120,9 @@ class PluralGame {
         this.totalWords.textContent = this.words.length;
         this.resetGameState();
         this.displayCurrentWord();
+
+        // Сохраняем выбранный набор
+        localStorage.setItem('selectedWordSet', setName);
     }
 
     shuffleArray(array) {
@@ -123,7 +143,7 @@ class PluralGame {
         this.prevBtn.addEventListener('click', () => this.previousWord());
         this.nextBtn.addEventListener('click', () => this.nextWord());
 
-        // Обработчики для выбора наборов слов в шапке
+        // Обработчики для выбора наборов слов в шапке (для десктопа)
         this.pluralLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -147,8 +167,9 @@ class PluralGame {
         console.log('Отображаем слово:', currentWord);
 
         this.wordContainer.innerHTML = `
-                    <div class="singular-word">«${currentWord.singular}»</div>
-                `;
+            <div class="singular-word">«${currentWord.singular}»</div>
+            <div class="instruction">Напишите во множественном числе родительного падежа</div>
+        `;
 
         this.pluralInput.value = this.userAnswers[this.currentIndex] || '';
         this.pluralInput.disabled = this.isChecked;

@@ -1,0 +1,97 @@
+/* Стили для страницы выбора наборов слов */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: transparent;
+    min-height: 100vh;
+}
+
+.menu-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Кнопка назад */
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #485e73;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #3e5062;
+}
+
+.back-button span {
+    font-size: 1.3rem;
+}
+
+/* Список наборов слов */
+.word-sets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.word-set-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #734848;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.word-set-link:hover {
+    background-color: #623e3e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.word-set-link:active {
+    transform: translateY(0);
+}
+
+.icon {
+    font-size: 1.3rem;
+    width: 30px;
+    text-align: center;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 480px) {
+    .menu-container {
+        padding: 15px;
+    }
+
+    .back-button {
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+
+    .word-set-link {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 1.1rem;
+        width: 25px;
+    }
+}

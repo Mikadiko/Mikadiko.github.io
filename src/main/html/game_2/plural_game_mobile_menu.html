@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор набора слов</title>
+    <link rel="stylesheet" href="../../styles/game_2_styles/plural_game_mobile_menu.css">
+</head>
+<body>
+<div class="menu-container">
+    <!-- Кнопка назад -->
+    <a href="javascript:history.back()" class="back-button">
+        <span>←</span>
+        Назад
+    </a>
+
+    <!-- Список наборов слов -->
+    <div class="word-sets-list">
+        <a href="./plural_game.html?set=basic" class="word-set-link" data-set="basic">
+            <span class="icon">📚</span>
+            Базовые слова
+        </a>
+        <a href="./plural_game.html?set=exceptions" class="word-set-link" data-set="exceptions">
+            <span class="icon">⚠️</span>
+            Исключения
+        </a>
+        <a href="./plural_game.html?set=complex" class="word-set-link" data-set="complex">
+            <span class="icon">🎯</span>
+            Сложные случаи
+        </a>
+        <a href="./plural_game.html?set=all" class="word-set-link" data-set="all">
+            <span class="icon">🔀</span>
+            Все слова
+        </a>
+    </div>
+</div>
+
+<script>
+    // Обработка выбора набора слов
+    document.addEventListener('DOMContentLoaded', function() {
+        const wordSetLinks = document.querySelectorAll('.word-set-link');
+
+        wordSetLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Отменяем стандартный переход
+
+                const setName = this.getAttribute('data-set');
+                console.log('Выбран набор:', setName);
+
+                // Сохраняем выбранный набор в localStorage
+                localStorage.setItem('selectedWordSet', setName);
+
+                // Переходим на страницу игры
+                window.location.href = `plural_game.html?set=${setName}`;
+            });
+        });
+
+        // Добавляем отладочную информацию
+        console.log('Текущий URL:', window.location.href);
+        console.log('Текущая папка:', window.location.pathname);
+    });
+</script>
+</body>
+</html>
