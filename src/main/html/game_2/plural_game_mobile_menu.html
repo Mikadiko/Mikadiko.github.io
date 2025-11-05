@@ -9,7 +9,7 @@
 <body>
 <div class="menu-container">
     <!-- Кнопка назад -->
-    <a href="javascript:history.back()" class="back-button">
+    <a href="../dictations_mobile_menu.html" class="back-button">
         <span>←</span>
         Назад
     </a>
@@ -35,30 +35,7 @@
     </div>
 </div>
 
-<script>
-    // Обработка выбора набора слов
-    document.addEventListener('DOMContentLoaded', function() {
-        const wordSetLinks = document.querySelectorAll('.word-set-link');
-
-        wordSetLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Отменяем стандартный переход
-
-                const setName = this.getAttribute('data-set');
-                console.log('Выбран набор:', setName);
-
-                // Сохраняем выбранный набор в localStorage
-                localStorage.setItem('selectedWordSet', setName);
-
-                // Переходим на страницу игры
-                window.location.href = `plural_game.html?set=${setName}`;
-            });
-        });
-
-        // Добавляем отладочную информацию
-        console.log('Текущий URL:', window.location.href);
-        console.log('Текущая папка:', window.location.pathname);
-    });
-</script>
+<!-- Подключаем JS файл из папки scripts/game_2_js -->
+<script src="../../scripts/game_2_js/plural_game_mobile_menu.js"></script>
 </body>
 </html>
