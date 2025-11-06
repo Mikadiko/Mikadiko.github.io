@@ -15,6 +15,7 @@ class PluralGame {
         this.correctCount = 0;
         this.incorrectCount = 0;
         this.userAnswers = [];
+        this.checkedAnswers = []; // Новый массив для отслеживания проверенных ответов
         this.isChecked = false;
 
         this.initializeElements();
@@ -185,7 +186,11 @@ class PluralGame {
         `;
 
         this.pluralInput.value = this.userAnswers[this.currentIndex] || '';
-        this.pluralInput.disabled = this.isChecked;
+
+        // Блокируем поле ввода, если ответ уже проверен
+        const isAnswerChecked = this.checkedAnswers[this.currentIndex];
+        this.pluralInput.disabled = isAnswerChecked;
+
         this.message.textContent = '';
         this.message.className = 'message';
 
@@ -212,6 +217,7 @@ class PluralGame {
         }
 
         this.userAnswers[this.currentIndex] = userAnswer;
+        this.checkedAnswers[this.currentIndex] = true; // Помечаем ответ как проверенный
         this.isChecked = true;
 
         if (userAnswer === correctAnswer) {
@@ -224,7 +230,7 @@ class PluralGame {
             this.message.className = 'message incorrect';
         }
 
-        this.pluralInput.disabled = true;
+        this.pluralInput.disabled = true; // Блокируем поле ввода после проверки
         this.updateStats();
         this.updateButtonStates();
     }
@@ -232,7 +238,7 @@ class PluralGame {
     nextWord() {
         if (this.currentIndex < this.words.length - 1) {
             this.currentIndex++;
-            this.isChecked = false;
+            this.isChecked = this.checkedAnswers[this.currentIndex] || false; // Проверяем, был ли ответ уже проверен
             this.displayCurrentWord();
         }
     }
@@ -240,7 +246,7 @@ class PluralGame {
     previousWord() {
         if (this.currentIndex > 0) {
             this.currentIndex--;
-            this.isChecked = false;
+            this.isChecked = this.checkedAnswers[this.currentIndex] || false; // Проверяем, был ли ответ уже проверен
             this.displayCurrentWord();
         }
     }
@@ -249,7 +255,9 @@ class PluralGame {
         this.prevBtn.disabled = this.currentIndex === 0;
         this.nextBtn.disabled = this.currentIndex === this.words.length - 1;
 
-        if (this.isChecked) {
+        // Блокируем кнопку проверки, если ответ уже проверен
+        const isAnswerChecked = this.checkedAnswers[this.currentIndex];
+        if (isAnswerChecked || this.isChecked) {
             this.checkBtn.disabled = true;
             this.checkBtn.textContent = 'Проверено';
         } else {
@@ -268,6 +276,7 @@ class PluralGame {
         this.correctCount = 0;
         this.incorrectCount = 0;
         this.userAnswers = [];
+        this.checkedAnswers = []; // Сбрасываем массив проверенных ответов
         this.isChecked = false;
     }
 
