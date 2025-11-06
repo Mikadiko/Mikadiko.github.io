@@ -1,0 +1,88 @@
+@import url('main.css');
+
+.word-line { /* контейнер для всей строки (созданный в js) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.context-word { /* левое или правое слово (создан в js) */
+    color: #252525;
+    font-size: 0.8em;
+    opacity: 0.7;
+    cursor: default;
+    user-select: none;
+    font-weight: normal;
+}
+
+.word-container {
+    font-size: clamp(20px, 5vw, 32px);
+    /* Минимум: 20px, Идеально: 5% ширины экрана, Максимум: 32px */
+    margin: clamp(40px, 4vw, 50px) 0;
+    min-height: clamp(40px, 8vw, 50px);
+    font-weight: bold;
+}
+
+.letter {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.letter:hover { /*при наведении на гласную букву*/
+    background-color: #f0f0f0;
+}
+
+.letter.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.letter.disabled:hover {
+    background-color: transparent;
+}
+
+.letter.consonant {
+    cursor: default;
+}
+
+.letter.consonant:hover {
+    background-color: transparent;
+}
+
+.correct {
+    color: #2ecc71;
+    font-weight: bold;
+    background-color: #e8f8ef;
+}
+
+.incorrect {
+    color: #e74c3c;
+    font-weight: bold;
+    background-color: #fdedec;
+}
+
+.stats {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.message {
+    margin: 30px 0;
+    min-height: 24px;
+    font-weight: bold;
+}
+
+.success-message {
+    color: #2ecc71;
+    font-size: clamp(20px, 5vw, 32px);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: clamp(20px, 5vw, 32px);
+}
