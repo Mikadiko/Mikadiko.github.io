@@ -8,7 +8,7 @@ class PluralGame {
         const savedSet = localStorage.getItem('selectedWordSet');
 
         // Приоритет: URL параметр > сохраненный набор > базовый набор
-        this.currentSet = urlSet || savedSet || 'basic';
+        this.currentSet = urlSet || savedSet || 'words_set_1';
 
         this.words = [];
         this.currentIndex = 0;
@@ -26,7 +26,7 @@ class PluralGame {
 
     initializeWordSets() {
         return {
-            basic: [
+            words_set_1: [
                 { singular: "дыни", plural: "дынь" },
                 { singular: "ботинки", plural: "ботинок" },
                 { singular: "блюдце", plural: "блюдец" },
@@ -54,7 +54,7 @@ class PluralGame {
                 { singular: "поверье", plural: "поверий" },
             ],
 
-            exceptions: [
+            words_set_2: [
                 { singular: "ребёнок", plural: "дети" },
                 { singular: "человек", plural: "люди" },
                 { singular: "друг", plural: "друзья" },
@@ -67,7 +67,7 @@ class PluralGame {
                 { singular: "брат", plural: "братья" },
             ],
 
-            complex: [
+            words_set_3: [
                 { singular: "адрес", plural: "адреса" },
                 { singular: "директор", plural: "директора" },
                 { singular: "профессор", plural: "профессора" },
@@ -105,9 +105,9 @@ class PluralGame {
         if (setName === 'all') {
             // Объединяем все наборы
             this.words = [
-                ...this.wordSets.basic,
-                ...this.wordSets.exceptions,
-                ...this.wordSets.complex
+                ...this.wordSets.words_set_1,
+                ...this.wordSets.words_set_2,
+                ...this.wordSets.words_set_3
             ];
             // Перемешиваем слова
             this.shuffleArray(this.words);
