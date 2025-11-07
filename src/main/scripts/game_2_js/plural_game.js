@@ -18,6 +18,11 @@ class PluralGame {
         this.checkedAnswers = []; // Новый массив для отслеживания проверенных ответов
         this.isChecked = false;
 
+        console.log('=== PluralGame инициализация ===');
+        console.log('URL параметры:', new URLSearchParams(window.location.search).toString());
+        console.log('Сохраненный набор:', savedSet);
+        console.log('Текущий набор:', this.currentSet);
+
         this.initializeElements();
         this.loadWordSet(this.currentSet);
         this.setupEventListeners();
@@ -100,7 +105,8 @@ class PluralGame {
     }
 
     loadWordSet(setName) {
-        console.log('Загружаем набор:', setName);
+        console.log('=== Загружаем набор слов ===');
+        console.log('Набор:', setName);
 
         if (setName === 'all') {
             // Объединяем все наборы
@@ -124,6 +130,9 @@ class PluralGame {
 
         // Сохраняем выбранный набор
         localStorage.setItem('selectedWordSet', setName);
+
+        console.log('Загружено слов:', this.words.length);
+        console.log('Примеры слов:', this.words.slice(0, 3));
     }
 
     shuffleArray(array) {
@@ -145,35 +154,50 @@ class PluralGame {
         this.nextBtn.addEventListener('click', () => this.nextWord());
 
         // Обработчики для выбора наборов слов в шапке (для десктопа)
-        this.pluralLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const setName = e.target.closest('.nav-sublink').dataset.set;
-                console.log('Выбран набор:', setName);
-                this.loadWordSet(setName);
-
-                // Обновляем URL без перезагрузки страницы
-                const newUrl = `${window.location.pathname}?set=${setName}`;
-                window.history.pushState({}, '', newUrl);
-            });
-        });
-
-        // Обработчик для кнопки "Мн.ч. Р.п." в мобильной версии
-        const pluralLink = document.querySelector('.plural-link');
-        if (pluralLink && window.innerWidth <= 768) {
-            pluralLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                // Навигация обрабатывается в navigation_bar.js
-            });
-        }
+        this.setupWordSetNavigation();
 
         // Автофокус на поле ввода при загрузке
         this.pluralInput.focus();
     }
 
+    // НОВЫЙ МЕТОД: Настройка навигации по наборам слов
+    setupWordSetNavigation() {
+        // Функция для обработки клика по набору слов
+        const handleWordSetClick = (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Важно: останавливаем всплытие
+
+            const link = e.target.closest('.nav-sublink');
+            if (!link) return;
+
+            const setName = link.dataset.set;
+            console.log('Выбран набор слов:', setName);
+
+            if (setName) {
+                this.loadWordSet(setName);
+
+                // Обновляем URL без перезагрузки страницы
+                const newUrl = `${window.location.pathname}?set=${setName}`;
+                window.history.pushState({}, '', newUrl);
+            }
+        };
+
+        // Прямое назначение обработчиков после небольшой задержки
+        setTimeout(() => {
+            const links = document.querySelectorAll('.nav-sublink[data-set]');
+            console.log('Найдено ссылок на наборы слов на странице игры:', links.length);
+
+            links.forEach(link => {
+                link.removeEventListener('click', handleWordSetClick); // Удаляем старые обработчики
+                link.addEventListener('click', handleWordSetClick);
+            });
+        }, 100);
+    }
+
     displayCurrentWord() {
         if (this.words.length === 0) {
             console.log('Нет слов для отображения');
+            this.wordContainer.innerHTML = '<div class="singular-word">Нет слов для отображения</div>';
             return;
         }
 
