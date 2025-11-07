@@ -182,7 +182,6 @@ class PluralGame {
 
         this.wordContainer.innerHTML = `
             <div class="singular-word">«${currentWord.singular}»</div>
-            <div class="instruction">Напишите во множественном числе родительного падежа</div>
         `;
 
         this.pluralInput.value = this.userAnswers[this.currentIndex] || '';

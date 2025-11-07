@@ -27,11 +27,6 @@
     margin-bottom: 15px;
 }
 
-.instruction {
-    font-size: 1.2em;
-    color: #7f8c8d;
-    font-style: italic;
-}
 
 .input-container {
     display: flex;
