@@ -81,10 +81,6 @@
                             <span class="icon">📚</span>
                             Падежный диктант 3
                         </a>
-                        <a href="#" class="nav-sublink" data-set="all">
-                            <span class="icon">📚</span>
-                            Слова в перемешку
-                        </a>
                     </div>
                 </div>
 
@@ -112,13 +108,13 @@
 </div>
 
 
-<!--Кружок с подсказкой-->
-<div class="circle-help-container">
-    <div class="help-circle" data-tooltip="Напишите во множественном числе родительного падежа">
-        ?
-    </div>
-    <script src="../../scripts/circle_help.js"></script>
-</div>
+<!--&lt;!&ndash;Кружок с подсказкой&ndash;&gt;-->
+<!--<div class="circle-help-container">-->
+<!--    <div class="help-circle" data-tooltip="Напишите во множественном числе родительного падежа">-->
+<!--        ?-->
+<!--    </div>-->
+<!--    <script src="../../scripts/circle_help.js"></script>-->
+<!--</div>-->
 
 
 <!--Орфо- слова, счетчики и кнопки передвижения в словах-->
@@ -126,6 +122,7 @@
 <div class="game-container">
     <!-- Основной контент -->
     <div class="word-content">
+        <div id="setInfoContainer" class="set-info-container"></div>
         <div class="progress">Слово <span id="currentWordIndex">1</span> из <span id="totalWords">20</span></div>
 
         <div class="word-container" id="wordContainer"></div>

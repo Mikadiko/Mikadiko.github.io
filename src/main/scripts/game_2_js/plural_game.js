@@ -2,7 +2,6 @@ class PluralGame {
     constructor() {
         this.wordSets = this.initializeWordSets();
 
-        // Получаем набор из параметров URL или localStorage
         const urlParams = new URLSearchParams(window.location.search);
         const urlSet = urlParams.get('set');
         const savedSet = localStorage.getItem('selectedWordSet');
@@ -31,61 +30,72 @@ class PluralGame {
 
     initializeWordSets() {
         return {
-            words_set_1: [
-                { singular: "дыни", plural: "дынь" },
-                { singular: "ботинки", plural: "ботинок" },
-                { singular: "блюдце", plural: "блюдец" },
-                { singular: "болотце", plural: "болотцев" },
-                { singular: "гольфы", plural: "гольфов" },
-                { singular: "кеды", plural: "кедов" },
-                { singular: "чулки", plural: "чулок" },
-                { singular: "гнездовье", plural: "гнездовий" },
-                { singular: "верховье", plural: "верховьев" },
-                { singular: "бредни", plural: "бредней" },
-                { singular: "ампер", plural: "ампер" },
-                { singular: "кухня", plural: "кухонь" },
-                { singular: "якуты", plural: "якутов" },
-                { singular: "солнце", plural: "солнц" },
-                { singular: "драгуны", plural: "драгун" },
-                { singular: "партизаны", plural: "партизан" },
-                { singular: "ватт", plural: "ватт" },
-                { singular: "томаты", plural: "томатов" },
-                { singular: "брюки", plural: "брюк" },
-                { singular: "печенье", plural: "печений" },
-                { singular: "саперы", plural: "саперов" },
-                { singular: "лохмотья", plural: "лохмотьев" },
-                { singular: "злыдни", plural: "злыдней" },
-                { singular: "няня", plural: "нянь" },
-                { singular: "поверье", plural: "поверий" },
-            ],
+            words_set_1: {
+                title: "Падежный диктант 1",
+                instruction: "Напишите слово в родительном падеже множественного числа",
 
-            words_set_2: [
-                { singular: "ребёнок", plural: "дети" },
-                { singular: "человек", plural: "люди" },
-                { singular: "друг", plural: "друзья" },
-                { singular: "сын", plural: "сыновья" },
-                { singular: "дерево", plural: "деревья" },
-                { singular: "перо", plural: "перья" },
-                { singular: "колос", plural: "колосья" },
-                { singular: "стул", plural: "стулья" },
-                { singular: "лист", plural: "листья" },
-                { singular: "брат", plural: "братья" },
-            ],
+                words: [
+                    {singular: "дыни", plural: "дынь"},
+                    {singular: "ботинки", plural: "ботинок"},
+                    {singular: "блюдце", plural: "блюдец"},
+                    {singular: "болотце", plural: "болотцев"},
+                    {singular: "гольфы", plural: "гольфов"},
+                    {singular: "кеды", plural: "кедов"},
+                    {singular: "чулки", plural: "чулок"},
+                    {singular: "гнездовье", plural: "гнездовий"},
+                    {singular: "верховье", plural: "верховьев"},
+                    {singular: "бредни", plural: "бредней"},
+                    {singular: "ампер", plural: "ампер"},
+                    {singular: "кухня", plural: "кухонь"},
+                    {singular: "якуты", plural: "якутов"},
+                    {singular: "солнце", plural: "солнц"},
+                    {singular: "драгуны", plural: "драгун"},
+                    {singular: "партизаны", plural: "партизан"},
+                    {singular: "ватт", plural: "ватт"},
+                    {singular: "томаты", plural: "томатов"},
+                    {singular: "брюки", plural: "брюк"},
+                    {singular: "печенье", plural: "печений"},
+                    {singular: "саперы", plural: "саперов"},
+                    {singular: "лохмотья", plural: "лохмотьев"},
+                    {singular: "злыдни", plural: "злыдней"},
+                    {singular: "няня", plural: "нянь"},
+                    {singular: "поверье", plural: "поверий"},
+                ]
+            },
 
-            words_set_3: [
-                { singular: "адрес", plural: "адреса" },
-                { singular: "директор", plural: "директора" },
-                { singular: "профессор", plural: "профессора" },
-                { singular: "доктор", plural: "доктора" },
-                { singular: "паспорт", plural: "паспорта" },
-                { singular: "том", plural: "тома" },
-                { singular: "корпус", plural: "корпуса" },
-                { singular: "кузов", plural: "кузова" },
-                { singular: "учитель", plural: "учителя" },
-                { singular: "мастер", plural: "мастера" },
-            ],
+            words_set_2: {
+                title: "Падежный диктант 2",
+                instruction: "Напишите слово в дательном падеже множественного числа",
+                words: [
+                    {singular: "ребёнок", plural: "дети"},
+                    {singular: "человек", plural: "люди"},
+                    {singular: "друг", plural: "друзья"},
+                    {singular: "сын", plural: "сыновья"},
+                    {singular: "дерево", plural: "деревья"},
+                    {singular: "перо", plural: "перья"},
+                    {singular: "колос", plural: "колосья"},
+                    {singular: "стул", plural: "стулья"},
+                    {singular: "лист", plural: "листья"},
+                    {singular: "брат", plural: "братья"},
+                ]
+            },
 
-            all: []
+            words_set_3: {
+                title: "Падежный диктант 3",
+                instruction: "Напишите слово в творительном падеже множественного числа",
+                words: [
+                    {singular: "адрес", plural: "адреса"},
+                    {singular: "директор", plural: "директора"},
+                    {singular: "профессор", plural: "профессора"},
+                    {singular: "доктор", plural: "доктора"},
+                    {singular: "паспорт", plural: "паспорта"},
+                    {singular: "том", plural: "тома"},
+                    {singular: "корпус", plural: "корпуса"},
+                    {singular: "кузов", plural: "кузова"},
+                    {singular: "учитель", plural: "учителя"},
+                    {singular: "мастер", plural: "мастера"},
+                ]
+            },
         };
     }
 
@@ -108,31 +118,31 @@ class PluralGame {
         console.log('=== Загружаем набор слов ===');
         console.log('Набор:', setName);
 
-        if (setName === 'all') {
-            // Объединяем все наборы
-            this.words = [
-                ...this.wordSets.words_set_1,
-                ...this.wordSets.words_set_2,
-                ...this.wordSets.words_set_3
-            ];
-            // Перемешиваем слова
-            this.shuffleArray(this.words);
-            // Берем первые 30 слов чтобы не было слишком много
-            this.words = this.words.slice(0, 30);
-        } else {
-            this.words = [...this.wordSets[setName]];
-        }
+        const wordSet = this.wordSets[setName];
 
+        // УБИРАЕМ логику для 'all'
         this.currentSet = setName;
+        this.currentWordSet = wordSet;
+        this.words = [...wordSet.words];
         this.totalWords.textContent = this.words.length;
+
         this.resetGameState();
         this.displayCurrentWord();
+        this.updateSetInfo();
 
-        // Сохраняем выбранный набор
         localStorage.setItem('selectedWordSet', setName);
 
         console.log('Загружено слов:', this.words.length);
-        console.log('Примеры слов:', this.words.slice(0, 3));
+    }
+
+    updateSetInfo() {
+        const infoContainer = document.getElementById('setInfoContainer');
+        if (infoContainer && this.currentWordSet) {
+            infoContainer.innerHTML = `
+            <div class="set-title">${this.currentWordSet.title}</div>
+            <div class="set-instruction">📝 ${this.currentWordSet.instruction}</div>
+        `;
+        }
     }
 
     shuffleArray(array) {
