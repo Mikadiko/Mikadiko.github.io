@@ -65,6 +65,69 @@ class PluralGame {
 
             words_set_2: {
                 title: "Падежный диктант 2",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "буряты", plural: "бурят"},
+                    {singular: "увечье", plural: "увечий"},
+                    {singular: "платье", plural: "платьев"},
+                    {singular: "ясли", plural: "яслей"},
+                    {singular: "грабли", plural: "граблей"},
+                    {singular: "копье", plural: "копий"},
+                    {singular: "сердце", plural: "сердец"},
+                    {singular: "гусары", plural: "гусар"},
+                    {singular: "солдаты", plural: "солдат"},
+                    {singular: "монголы", plural: "монголов"},
+                    {singular: "яблоки", plural: "яблок"},
+                    {singular: "погоны", plural: "погон"},
+                    {singular: "бананы", plural: "бананов"},
+                    {singular: "копытце", plural: "копытец"},
+                    {singular: "хорваты", plural: "хорватов"},
+                    {singular: "оконце", plural: "оконцев"},
+                    {singular: "гренадеры", plural: "гренадер"},
+                    {singular: "ананасы", plural: "ананасов"},
+                    {singular: "валенки", plural: "валенок"},
+                    {singular: "шорты", plural: "шорт"},
+                    {singular: "румыны", plural: "румын"},
+                    {singular: "татары", plural: "татар"},
+                    {singular: "рельсы", plural: "рельсов"},
+                    {singular: "баклажаны", plural: "баклажанов"},
+                    {singular: "гетры", plural: "гетр"},
+                ]
+            },
+
+            words_set_3: {
+                title: "Падежный диктант 3",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "гранаты", plural: "гранатов"},
+                    {singular: "бахилы", plural: "бахил"},
+                    {singular: "сапоги", plural: "сапог"},
+                    {singular: "дровни", plural: "дровней"},
+                    {singular: "башня", plural: "башен"},
+                    {singular: "макароны", plural: "макарон"},
+                    {singular: "клипсы", plural: "клипсов"},
+                    {singular: "эполеты", plural: "эполет"},
+                    {singular: "башкиры", plural: "башкир"},
+                    {singular: "деревце", plural: "деревцев"},
+                    {singular: "одеяльце", plural: "одеялец"},
+                    {singular: "таджики", plural: "таджиков"},
+                    {singular: "кадеты", plural: "кадет"},
+                    {singular: "мандарины", plural: "мандаринов"},
+                    {singular: "помидоры", plural: "помидоров"},
+                    {singular: "панталоны", plural: "панталон"},
+                    {singular: "кушанье", plural: "кушаний"},
+                    {singular: "подземелье", plural: "подземелий"},
+                    {singular: "низовье", plural: "низовьев"},
+                    {singular: "хлопья", plural: "хлопьев"},
+                    {singular: "гантели", plural: "гантелей"},
+                    {singular: "тети", plural: "тетей"},
+                    {singular: "вафля", plural: "вафель"},
+                    {singular: "жабры", plural: "жабр"},
+                    {singular: "петля", plural: "петель"},
+                ]
+            },
+            words_set_4: {
+                title: "Падежный диктант 4",
                 instruction: "Напишите слово в дательном падеже множественного числа",
                 words: [
                     {singular: "породе", plural: "породам"},
@@ -83,8 +146,8 @@ class PluralGame {
                 ]
             },
 
-            words_set_3: {
-                title: "Падежный диктант 3",
+            words_set_5: {
+                title: "Падежный диктант 5",
                 instruction: "Напишите слово в творительном падеже множественного числа",
                 words: [
                     {singular: "сёстры", plural: "сёстрами"},
