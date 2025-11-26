@@ -128,6 +128,37 @@ class PluralGame {
             },
             words_set_4: {
                 title: "Падежный диктант 4",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "лимоны", plural: "лимонов"},
+                    {singular: "чукчи", plural: "чукчей"},
+                    {singular: "аршин", plural: "аршин"},
+                    {singular: "басня", plural: "басен"},
+                    {singular: "вольт", plural: "вольт"},
+                    {singular: "абрикосы", plural: "абрикосов"},
+                    {singular: "сливы", plural: "слив"},
+                    {singular: "кастаньеты", plural: "кастаньет"},
+                    {singular: "лампасы", plural: "лампасов"},
+                    {singular: "армян", plural: "армян"},
+                    {singular: "турки", plural: "турок"},
+                    {singular: "туфли", plural: "туфель"},
+                    {singular: "запястье", plural: "запястий"},
+                    {singular: "коренья", plural: "кореньев"},
+                    {singular: "ладья", plural: "ладей"},
+                    {singular: "устье", plural: "устьев"},
+                    {singular: "шаровары", plural: "шаровар"},
+                    {singular: "будни", plural: "будней"},
+                    {singular: "простыни", plural: "простыней"},
+                    {singular: "дело", plural: "много дел"},
+                    {singular: "носки", plural: "носков"},
+                    {singular: "отродье", plural: "отродий"},
+                    {singular: "апельсины", plural: "апельсинов"},
+                    {singular: "бутсы", plural: "бутс"},
+                    {singular: "сиденье", plural: "сидений"},
+                ]
+            },
+            words_set_5: {
+                title: "Падежный диктант 5",
                 instruction: "Напишите слово в дательном падеже множественного числа",
                 words: [
                     {singular: "породе", plural: "породам"},
@@ -146,8 +177,8 @@ class PluralGame {
                 ]
             },
 
-            words_set_5: {
-                title: "Падежный диктант 5",
+            words_set_6: {
+                title: "Падежный диктант 6",
                 instruction: "Напишите слово в творительном падеже множественного числа",
                 words: [
                     {singular: "сёстры", plural: "сёстрами"},
