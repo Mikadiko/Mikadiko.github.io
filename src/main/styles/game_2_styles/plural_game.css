@@ -143,8 +143,11 @@
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .set-info-container {
+    .word-content {
         padding: 15px;
+    }
+    .set-info-container {
+        padding: 10px;
         margin: 5px 0;
     }
 
@@ -154,5 +157,60 @@
 
     .set-instruction {
         font-size: 1em;
+    }
+}
+/* Адаптивность для мобильных телефонов */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 5px;
+        margin: 2px auto;
+    }
+
+    .word-content {
+        padding: 10px;
+    }
+
+    .input-container {
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    #pluralInput {
+        width: 100%; /* Занимает всю доступную ширину */
+        max-width: 280px;
+        padding: 12px 15px;
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%; /* Кнопки тоже на всю ширину */
+        max-width: 200px;
+    }
+
+    .set-info-container {
+        padding: 15px 10px;
+        margin: 10px 0;
+    }
+
+    .set-title {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .set-instruction {
+        font-size: 0.9em;
+        line-height: 1.3;
+    }
+
+    .message {
+        margin: 20px 0;
+        font-size: 0.9em;
+    }
+
+    .message.correct,
+    .message.incorrect {
+        font-size: clamp(14px, 2vw, 16px);
     }
 }
