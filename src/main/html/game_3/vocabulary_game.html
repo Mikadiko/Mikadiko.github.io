@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Множественное число</title>
+    <link rel="stylesheet" href="../../styles/game_3_styles/vocabulary_game.css">
+</head>
+<body>
+<!--Шапка навигации-->
+<div class="navigation_bar">
+    <nav class="modern-nav">
+        <div class="nav-container">
+            <div class="nav-links">
+                <!-- Группа с диктантами -->
+                <div class="nav-group">
+                    <a href="#" class="nav-link dictations-link">
+                        <span class="icon">🎯</span>
+                        Орфоэпия
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="../../../index.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 1
+                        </a>
+                        <a href="../dictation_2.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 2
+                        </a>
+                        <a href="../dictation_3.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 3
+                        </a>
+                        <a href="../dictation_4.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 4
+                        </a>
+                        <a href="../dictation_5.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 5
+                        </a>
+                        <a href="../dictation_6.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 6
+                        </a>
+                        <a href="../dictation_7.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 7
+                        </a>
+                        <a href="../dictation_8.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 8
+                        </a>
+                        <a href="../dictation_9.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 9
+                        </a>
+                        <a href="../dictation_10.html" class="nav-sublink">
+                            <span class="icon">🎯</span>
+                            Орфоэпический диктант 10
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Группа с множественным числом -->
+                <div class="nav-group">
+                    <a href="#" class="nav-link plural-link">
+                        <span class="icon">📑</span>
+                        Падежный
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="#" class="nav-sublink" data-set="words_set_1">
+                            <span class="icon">📑</span>
+                            Падежный диктант 1
+                        </a>
+                        <a href="#" class="nav-sublink" data-set="words_set_2">
+                            <span class="icon">📑</span>
+                            Падежный диктант 2
+                        </a>
+                        <a href="#" class="nav-sublink" data-set="words_set_3">
+                            <span class="icon">📑</span>
+                            Падежный диктант 3
+                        </a>
+                        <a href="#" class="nav-sublink" data-set="words_set_4">
+                            <span class="icon">📑</span>
+                            Падежный диктант 4
+                        </a>
+                        <a href="#" class="nav-sublink" data-set="words_set_5">
+                            <span class="icon">📑</span>
+                            Падежный диктант 5
+                        </a>
+                        <a href="#" class="nav-sublink" data-set="words_set_6">
+                            <span class="icon">📑</span>
+                            Падежный диктант 6
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Словарный диктант -->
+                <div class="nav-group">
+                    <a href="#" class="nav-link spelling-link">
+                        <span class="icon">🅰️</span>
+                        Словарный диктант
+                    </a>
+                    <div class="nav-submenu">
+                        <a href="#" class="nav-sublink" data-vocabulary-set="vocabulary_set_1">
+                            <span class="icon">🅰️</span>
+                            Словарный диктант 1
+                        </a>
+                        <a href="#" class="nav-sublink" data-vocabulary-set="vocabulary_set_2">
+                            <span class="icon">🅰️</span>
+                            Словарный диктант 2
+                        </a>
+                        <a href="#" class="nav-sublink" data-vocabulary-set="vocabulary_set_3">
+                            <span class="icon">🅰️</span>
+                            Словарный диктант 3
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Фон -->
+                <a href="#" class="nav-link coming-soon">
+                    <span class="icon">🎨</span>
+                    Фон
+                </a>
+            </div>
+        </div>
+    </nav>
+    <script src="../../scripts/navigation_bar.js"></script>
+</div>
+
+
+<!--Фон страницы-->
+<div id="container">
+    <div id="background" class="translucent"></div>
+    <div id="content"></div>
+</div>
+
+
+<!-- Основной контейнер игры -->
+<div class="game-container">
+    <!-- Основной контент -->
+    <div class="word-content">
+        <div id="setInfoContainer" class="set-info-container">
+            <h2>Словарный диктант 1</h2>
+            <p>Вставьте правильные буквы в пропуски</p>
+        </div>
+
+        <div class="progress">Слово <span id="currentWordIndex">1</span> из <span id="totalWords">12</span></div>
+
+        <div class="word-container" id="wordContainer">
+            <!-- Слово будет вставлено сюда JavaScript -->
+        </div>
+
+        <div class="input-container">
+            <button class="btn check-btn" id="checkBtn">Проверить</button>
+        </div>
+
+        <!-- Сообщение о результате (появляется после нажатия кнопки "Проверить") -->
+        <div class="message" id="message"></div>
+
+        <div class="stats">
+            <span class="stat-correct">Правильно: <span id="correctCount">0</span></span> |
+            <span class="stat-incorrect">Неправильно: <span id="incorrectCount">0</span></span>
+        </div>
+
+        <div class="button-container">
+            <button class="btn reset-btn" id="resetBtn">Начать сначала</button>
+            <button class="btn prev-btn" id="prevBtn">Назад</button>
+            <button class="btn next-btn" id="nextBtn">Далее</button>
+        </div>
+        <script src="../../scripts/game_3_js/vocabulary_game.js" data-word-set="vocabulary_set_1"></script>
+    </div>
+</div>

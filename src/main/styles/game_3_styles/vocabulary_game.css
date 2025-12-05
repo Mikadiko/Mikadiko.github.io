@@ -1,0 +1,593 @@
+@import url('../main.css');
+/* vocabulary_game.css */
+
+/* Основной контейнер игры */
+.game-container {
+    max-width: 600px;
+    margin: 5px auto;
+    background: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.word-content {
+    padding: 20px 15px;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.set-info-container {
+    background: transparent;
+    border-radius: 15px;
+    padding: 15px 10px;
+    margin: 15px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.set-info-container h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #734848;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.set-info-container p {
+    font-size: 1em;
+    color: #2c3e50;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+}
+
+.progress {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #7f8c8d;
+    word-wrap: break-word;
+}
+
+.word-container {
+    margin: 20px 0;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.word-display {
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: bold;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3px;
+    width: 100%;
+    word-break: break-word;
+}
+
+.word-part {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.gap-container {
+    display: inline-block;
+    position: relative;
+    margin: 0 3px;
+    min-width: 40px;
+}
+
+.gap-input {
+    width: 50px;
+    height: 45px;
+    font-size: 1.2em;
+    text-align: center;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #2c3e50;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.gap-input:focus {
+    outline: none;
+    border-color: #735e48;
+    transform: translateY(-1px);
+    background: white;
+}
+
+.gap-input::placeholder {
+    color: #adb5bd;
+    font-weight: normal;
+}
+
+.gap-input.correct-input {
+    border-color: #2ecc71;
+    background: #e8f8ef;
+    color: #27ae60;
+}
+
+.gap-input.incorrect-input {
+    border-color: #e74c3c;
+    background: #fdedec;
+    color: #c0392b;
+}
+
+.gap-input:disabled {
+    background-color: #ecf0f1;
+    cursor: not-allowed;
+}
+
+/* Стиль для отображения правильного ответа рядом */
+.correct-answer-hint {
+    color: #e74c3c;
+    font-size: 0.9em;
+    font-style: italic;
+    margin-left: 5px;
+    display: inline-block;
+    font-weight: normal;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    min-width: 120px;
+    box-sizing: border-box;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Стили для отключенных кнопок */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.check-btn {
+    background-color: #734848;
+    min-width: 140px;
+    width: 100%;
+    max-width: 280px;
+}
+
+.check-btn:hover:not(:disabled) {
+    background-color: #623e3e;
+}
+
+.check-btn:disabled {
+    background-color: #9e9e9e !important;
+}
+
+.check-btn:disabled:hover {
+    background-color: #9e9e9e !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.message {
+    margin: 20px 0;
+    min-height: 40px;
+    font-weight: bold;
+    font-size: clamp(14px, 2vw, 16px);
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    word-wrap: break-word;
+}
+
+.message.correct {
+    color: #2ecc71;
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 2px solid rgba(46, 204, 113, 0.3);
+}
+
+.message.incorrect {
+    color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 2px solid rgba(231, 76, 60, 0.3);
+}
+
+.message.complete {
+    color: #3498db;
+    background-color: rgba(52, 152, 219, 0.1);
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+.stats {
+    margin: 15px 0;
+    font-size: 16px;
+    color: #555;
+    padding: 10px;
+    background: rgba(115, 72, 72, 0.05);
+    border-radius: 6px;
+    word-wrap: break-word;
+}
+
+.stat-correct {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.stat-incorrect {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.reset-btn {
+    background-color: #485e73;
+    flex: 1;
+    min-width: 140px;
+    max-width: 180px;
+}
+
+.reset-btn:hover:not(:disabled) {
+    background-color: #3e5062;
+}
+
+.prev-btn {
+    background-color: #73485e;
+    flex: 1;
+    min-width: 100px;
+    max-width: 140px;
+}
+
+.prev-btn:hover:not(:disabled) {
+    background-color: #623e50;
+}
+
+.next-btn {
+    background-color: #48735e;
+    flex: 1;
+    min-width: 100px;
+    max-width: 140px;
+}
+
+.next-btn:hover:not(:disabled) {
+    background-color: #3e6250;
+}
+
+/* Стили для активной ссылки в навигации */
+.nav-sublink.active {
+    background: linear-gradient(135deg, #734848 0%, #623e3e 100%);
+    color: white !important;
+    font-weight: bold;
+}
+
+.nav-sublink.active .icon {
+    color: white !important;
+    filter: brightness(1.5);
+}
+
+/* Для обратной совместимости со второй игрой */
+[data-set].active {
+    border-left: 3px solid #734848;
+}
+
+[data-vocabulary-set].active {
+    border-left: 3px solid #485e73;
+}
+
+/* Медиа-запросы для различных разрешений */
+
+/* Планшеты и маленькие ноутбуки */
+@media (min-width: 481px) and (max-width: 768px) {
+    .game-container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .word-content {
+        padding: 25px 20px;
+    }
+
+    .set-info-container {
+        padding: 20px 15px;
+        margin: 20px 0;
+    }
+
+    .set-info-container h2 {
+        font-size: 1.5em;
+    }
+
+    .set-info-container p {
+        font-size: 1.1em;
+    }
+
+    .word-display {
+        font-size: clamp(22px, 4.5vw, 30px);
+        gap: 5px;
+    }
+
+    .gap-input {
+        width: 65px;
+        height: 55px;
+        font-size: 1.4em;
+    }
+
+    .correct-answer-hint {
+        font-size: 0.85em;
+        margin-left: 3px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 15px;
+        min-width: 140px;
+    }
+
+    .check-btn {
+        max-width: 320px;
+    }
+
+    .reset-btn {
+        max-width: 200px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        max-width: 160px;
+    }
+}
+
+/* Десктопы */
+@media (min-width: 769px) {
+    .game-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .word-content {
+        padding: 30px 25px;
+    }
+
+    .set-info-container {
+        padding: 25px 20px;
+        margin: 25px 0;
+    }
+
+    .set-info-container h2 {
+        font-size: 1.6em;
+    }
+
+    .set-info-container p {
+        font-size: 1.2em;
+    }
+
+    .word-display {
+        font-size: clamp(24px, 5vw, 32px);
+        gap: 8px;
+    }
+
+    .gap-input {
+        width: 80px;
+        height: 70px;
+        font-size: 1.8em;
+        border-width: 3px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        min-width: 150px;
+    }
+
+    .check-btn {
+        min-width: 160px;
+        max-width: 350px;
+    }
+
+    .reset-btn {
+        max-width: 220px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        max-width: 180px;
+    }
+}
+
+/* Очень маленькие телефоны */
+@media (max-width: 360px) {
+    .game-container {
+        padding: 5px;
+        margin: 2px auto;
+    }
+
+    .word-content {
+        padding: 8px;
+    }
+
+    .word-display {
+        font-size: clamp(16px, 3.5vw, 20px);
+        gap: 2px;
+    }
+
+    .gap-input {
+        width: 40px;
+        height: 35px;
+        font-size: 1.1em;
+    }
+
+    .correct-answer-hint {
+        font-size: 0.8em;
+        margin-left: 2px;
+    }
+
+    .input-container {
+        margin: 15px 0;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        min-width: 100px;
+    }
+
+    .check-btn {
+        min-width: 120px;
+        max-width: 250px;
+    }
+
+    .reset-btn {
+        max-width: 150px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        min-width: 80px;
+        max-width: 120px;
+    }
+
+    .button-container {
+        gap: 8px;
+    }
+}
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-height: 600px) and (orientation: landscape) {
+    .game-container {
+        padding: 5px;
+        margin: 5px auto;
+    }
+
+    .word-content {
+        padding: 10px;
+    }
+
+    .set-info-container {
+        padding: 10px 5px;
+        margin: 10px 0;
+    }
+
+    .set-info-container h2 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .set-info-container p {
+        font-size: 0.9em;
+    }
+
+    .word-container {
+        margin: 15px 0;
+        min-height: 60px;
+    }
+
+    .word-display {
+        font-size: clamp(18px, 3vw, 22px);
+    }
+
+    .gap-input {
+        width: 45px;
+        height: 40px;
+        font-size: 1.1em;
+    }
+
+    .input-container {
+        margin: 15px 0;
+    }
+
+    .message {
+        margin: 15px 0;
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .stats {
+        margin: 10px 0;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .button-container {
+        margin-top: 10px;
+        gap: 8px;
+    }
+}
+
+/* Для очень больших слов */
+.long-word .word-display {
+    font-size: clamp(16px, 3vw, 22px);
+}
+
+.long-word .gap-input {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1em;
+}
+
+/* Убедимся, что всё помещается по ширине */
+@media (max-width: 320px) {
+    .game-container {
+        padding: 2px;
+    }
+
+    .word-display {
+        font-size: clamp(14px, 2.8vw, 18px);
+    }
+
+    .gap-input {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 90px;
+    }
+}
