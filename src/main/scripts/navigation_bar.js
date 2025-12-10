@@ -18,10 +18,10 @@ function getCorrectPath(targetPage) {
     console.log('На index:', isIndex);
     console.log('На dictation:', isDictationPage);
 
-    // Для третьей игры (словарный диктант) - ИСПРАВЛЕНО
+    // Для третьей игры (словарный диктант)
     if (isInGame3) {
         if (targetPage === 'dictations') {
-            return '../dictations_mobile_menu.html'; // ОДИН уровень вверх
+            return '../dictations_mobile_menu.html'; // Один уровень вверх
         } else if (targetPage === 'plural') {
             return '../game_2/plural_game_mobile_menu.html';
         } else if (targetPage === 'spelling') {
@@ -59,10 +59,10 @@ function getCorrectPath(targetPage) {
             return './game_3/vocabulary_game_mobile_menu.html';
         }
     }
-    // Для главной страницы (index.html) - первая игра
+    // Для главной страницы (index.html) - первая игра - ИСПРАВЛЕНО
     else if (isIndex) {
         if (targetPage === 'dictations') {
-            return './main/dictations_mobile_menu.html';
+            return './main/html/dictations_mobile_menu.html'; // ИЗМЕНЕНО
         } else if (targetPage === 'plural') {
             return './main/html/game_2/plural_game_mobile_menu.html';
         } else if (targetPage === 'spelling') {
@@ -72,7 +72,7 @@ function getCorrectPath(targetPage) {
     // Для других случаев (страницы в корне)
     else {
         if (targetPage === 'dictations') {
-            return './main/dictations_mobile_menu.html';
+            return './main/html/dictations_mobile_menu.html'; // ИЗМЕНЕНО
         } else if (targetPage === 'plural') {
             return './main/html/game_2/plural_game_mobile_menu.html';
         } else if (targetPage === 'spelling') {
