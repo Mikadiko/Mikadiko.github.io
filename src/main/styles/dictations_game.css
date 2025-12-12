@@ -1,6 +1,73 @@
 @import url('main.css');
 
-.word-line { /* контейнер для всей строки (созданный в js) */
+/* Кружок с подсказкой */
+.circle-help-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    position: relative;
+}
+
+.help-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #485e73;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: help;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.help-circle:hover {
+    background-color: #3a4d5e;
+}
+
+/* Стили для динамически создаваемой подсказки в кружке */
+.tooltip {
+    font-family: Arial, sans-serif;
+    position: fixed;
+    max-width: 250px;
+    background-color: #3e5062;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 12px;
+    z-index: 10000;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+}
+
+/* Основной контент */
+#Container_world {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 5px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* контейнер для строки, в которой перебираются слова (созданный в js) */
+.word-line {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,6 +84,8 @@
     font-weight: normal;
 }
 
+
+/* контейнер для строки, в которой перебираются слова */
 .word-container {
     font-size: clamp(20px, 5vw, 32px);
     /* Минимум: 20px, Идеально: 5% ширины экрана, Максимум: 32px */
@@ -25,6 +94,7 @@
     font-weight: bold;
 }
 
+/* основное слово, проверяемое (созданный в js) */
 .letter {
     cursor: pointer;
     transition: all 0.3s ease;
@@ -53,6 +123,7 @@
     background-color: transparent;
 }
 
+/*сообщение о правильном или неправильном вводе*/
 .correct {
     color: #2ecc71;
     font-weight: bold;
@@ -65,23 +136,22 @@
     background-color: #fdedec;
 }
 
-.stats {
-    margin: 20px 0;
-    font-size: 18px;
-    color: #555;
-}
 
+
+/*Показываем сообщение о правильном вводе если слово завершено*/
 .message {
     margin: 30px 0;
     min-height: 24px;
     font-weight: bold;
 }
 
+/*для сообщения с верным ответом + строки информации "Игра сброшена! Начните заново." (созданный в js)*/
 .success-message {
     color: #2ecc71;
     font-size: clamp(20px, 5vw, 32px);
 }
 
+/*Показываем сообщение о не правильном вводе если слово завершено*/
 .error-message {
     color: #e74c3c;
     font-size: clamp(20px, 5vw, 32px);

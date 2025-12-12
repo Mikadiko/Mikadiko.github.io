@@ -2,25 +2,14 @@
 
 /* Основной контейнер игры */
 .game-container {
-    max-width: 600px;
-    margin: 5px auto;
-    background: transparent;
-    border-radius: 15px;
-    box-shadow: none; /* Убираем тень */
-    overflow: visible; /* Меняем на visible */
     font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 22px auto;
     padding: 10px;
     text-align: center;
 }
 
-.word-content {
-    padding: 30px;
-    background: transparent; /* Полностью прозрачный */
-    backdrop-filter: none; /* Убираем размытие */
-    border: none; /* Убираем границу */
-}
-
-
+/*перебираемое слово*/
 .singular-word {
     font-size: clamp(25px, 5vw, 32px);
     font-weight: bold;
@@ -28,7 +17,7 @@
 }
 
 
-.input-container {
+.input-container { /*поле ввода*/
     display: flex;
     gap: 15px;
     margin: 30px 0;
@@ -57,17 +46,8 @@
     cursor: not-allowed;
 }
 
-.btn {
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn:disabled {
+/*кнопка "проверить"*/
+.btn:disabled { /* при блокиковке пнопки "проверить", если ответ уже проверен*/
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
@@ -82,7 +62,7 @@
     background-color: #623e3e;
 }
 
-
+/*сообщения о правильном или неправильном вводе*/
 .message {
     margin: 30px 0;
     min-height: 24px;
@@ -99,22 +79,11 @@
     font-size: clamp(16px, 2.5vw, 20px);
 }
 
-
-
-
-
-
-
-
-
-
+/*Информационный контейнер (Информация о диктанте и правило ввода)*/
 .set-info-container {
     background: transparent;
-    border-radius: 15px;
     padding: 25px;
     margin: 25px 0;
-    /*border-left: 5px solid #734848;*/
-    /*box-shadow: 0 4px 15px rgba(0,0,0,0.1);*/
     text-align: center;
 }
 
@@ -132,14 +101,7 @@
     line-height: 1.4;
 }
 
-/*.set-case {*/
-/*    font-size: 1.1em;*/
-/*    color: #5a6c7d;*/
-/*    background: rgba(115, 72, 72, 0.1);*/
-/*    padding: 10px 15px;*/
-/*    border-radius: 8px;*/
-/*    display: inline-block;*/
-/*}*/
+
 
 /* Адаптивность */
 @media (max-width: 768px) {

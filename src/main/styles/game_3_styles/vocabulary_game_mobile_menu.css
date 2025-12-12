@@ -82,15 +82,3 @@ body {
         width: 25px;
     }
 }
-
-/* Стиль для активной ссылки */
-.word-set-link.active {
-    background: linear-gradient(135deg, #734848 0%, #623e3e 100%);
-    color: white;
-    border: 2px solid #bdc3c7;
-}
-
-.word-set-link.active .icon {
-    color: white;
-    filter: brightness(1.5);
-}
