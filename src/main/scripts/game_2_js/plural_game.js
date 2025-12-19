@@ -193,6 +193,27 @@ class PluralGame {
                     {singular: "грамотой", plural: "грамотами"},
                 ]
             },
+            words_set_7: {
+                title: "Падежный диктант 7",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "абрикос", plural: "абрикосов"},
+                    {singular: "ананас", plural: "ананасов"},
+                    {singular: "вишня", plural: "вишен"},
+                    {singular: "макароны", plural: "макарон"},
+                    {singular: "апельсин", plural: "апельсинов"},
+                    {singular: "дыня", plural: "дынь"},
+                    {singular: "баклажан", plural: "баклажанов"},
+                    {singular: "слива", plural: "слив"},
+                    {singular: "яблоко", plural: "яблок"},
+                    {singular: "банан", plural: "бананов"},
+                    {singular: "гранат", plural: "гранатов"},
+                    {singular: "лимон", plural: "лимонов"},
+                    {singular: "вишня", plural: "вишен"},
+                    {singular: "помидор", plural: "помидоров"},
+                    {singular: "томат", plural: "томатов"},
+                ]
+            },
         };
     }
 
