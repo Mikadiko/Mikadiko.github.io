@@ -214,6 +214,28 @@ class PluralGame {
                     {singular: "томат", plural: "томатов"},
                 ]
             },
+            words_set_8: {
+                title: "Падежный диктант 8",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "армяне", plural: "армян"},
+                    {singular: "грузины", plural: "грузин"},
+                    {singular: "башкиры", plural: "башкир"},
+                    {singular: "болгары", plural: "болгар"},
+                    {singular: "осетины", plural: "осетин"},
+                    {singular: "румыны", plural: "румын"},
+                    {singular: "татары", plural: "татар"},
+                    {singular: "туркмены", plural: "туркмен"},
+                    {singular: "цыгане", plural: "цыган"},
+                    {singular: "буряты", plural: "бурят"},
+                    {singular: "турки", plural: "турок"},
+                    {singular: "монголы", plural: "монголов"},
+                    {singular: "калмыки", plural: "калмыков"},
+                    {singular: "киргизы", plural: "киргизов"},
+                    {singular: "таджики", plural: "таджиков"},
+                    {singular: "узбеки", plural: "узбеков"},
+                ]
+            },
         };
     }
 

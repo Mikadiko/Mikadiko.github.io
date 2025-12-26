@@ -84,17 +84,17 @@
     }
 
     .nav-submenu {
-        position: absolute;
-        top: 100%;
-        left: 0;
+        /*position: absolute;*/
+        /*top: 100%;*/
+        /*left: 0;*/
         width: 100%; /* 100% ширины .modern-nav - ТОЛЬКО ДЛЯ ПК */
-        background: #734848;
-        border-radius: 0 0 8px 8px; /* Скругляем только снизу - ТОЛЬКО ДЛЯ ПК */
-        min-width: auto; /* Убираем фиксированную ширину - ТОЛЬКО ДЛЯ ПК */
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
+        /*background: #734848;*/
+        /*border-radius: 0 0 8px 8px; !* Скругляем только снизу - ТОЛЬКО ДЛЯ ПК *!*/
+        /*min-width: auto; !* Убираем фиксированную ширину - ТОЛЬКО ДЛЯ ПК *!*/
+        /*opacity: 0;*/
+        /*visibility: hidden;*/
+        /*transition: all 0.3s ease;*/
+        /*z-index: 1000;*/
 
         /* Горизонтальное расположение с переносом - ТОЛЬКО ДЛЯ ПК */
         display: flex;
