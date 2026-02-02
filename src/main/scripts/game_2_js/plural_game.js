@@ -271,6 +271,25 @@ class PluralGame {
                     {singular: "низовье", plural: "низовьев"},
                 ]
             },
+            words_set_10: {
+                title: "Падежный диктант 10",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "блюдце", plural: "блюдец"},
+                    {singular: "болотце", plural: "болотцев"},
+                    {singular: "копытце", plural: "копытец"},
+                    {singular: "оконце", plural: "оконцев"},
+                    {singular: "полотенце", plural: "полотенец"},
+                    {singular: "солнце", plural: "солнц"},
+                    {singular: "зеркальце", plural: "зеркалец"},
+                    {singular: "одеяльце", plural: "одеялец"},
+                    {singular: "щупальце", plural: "щупалец"},
+                    {singular: "кочерга", plural: "кочерёг"},
+                    {singular: "заморозки", plural: "заморозков"},
+                    {singular: "серьга", plural: "серег"},
+                    {singular: "очистки", plural: "очистков"},
+                ]
+            },
         };
     }
 
