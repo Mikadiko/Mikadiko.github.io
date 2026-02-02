@@ -236,6 +236,41 @@ class PluralGame {
                     {singular: "узбеки", plural: "узбеков"},
                 ]
             },
+            words_set_9: {
+                title: "Падежный диктант 9",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "гнездовье", plural: "гнездовий"},
+                    {singular: "будни", plural: "будней"},
+                    {singular: "запястье", plural: "запястий"},
+                    {singular: "простыня", plural: "простыней"},
+                    {singular: "кушанье", plural: "кушаний"},
+                    {singular: "гантель", plural: "гантелей"},
+                    {singular: "надгробье", plural: "надгробий"},
+                    {singular: "грабли", plural: "граблей"},
+                    {singular: "ожерелье", plural: "ожерелий"},
+                    {singular: "дядя", plural: "дядей"},
+                    {singular: "печенье", plural: "печений"},
+                    {singular: "тетя", plural: "тетей"},
+                    {singular: "сиденье", plural: "сидений"},
+                    {singular: "ясли", plural: "яслей"},
+                    {singular: "побережье", plural: "побережий"},
+                    {singular: "кегль", plural: "кеглей"},
+                    {singular: "соленье", plural: "солений"},
+                    {singular: "свеча", plural: "свечей"},
+                    {singular: "поверье", plural: "поверий"},
+                    {singular: "", plural: ""},
+                    {singular: "увечье", plural: "увечий"},
+                    {singular: "няня", plural: "нянь"},
+                    {singular: "подземелье", plural: "подземелий"},
+                    {singular: "оладья", plural: "оладий"},
+                    {singular: "платья", plural: "платьев"},
+                    {singular: "ущелье", plural: "ущелий"},
+                    {singular: "устье", plural: "устьев"},
+                    {singular: "угодье", plural: "угодий"},
+                    {singular: "низовье", plural: "низовьев"},
+                ]
+            },
         };
     }
 
