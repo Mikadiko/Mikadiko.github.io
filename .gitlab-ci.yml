@@ -1,4 +1,6 @@
-  image: node:lts
+  image:
+    name: node:lts
+    pull_policy: if-not-present
   create-pages:
     script:
       - npm install
