@@ -289,6 +289,37 @@ class PluralGame {
                     {singular: "очистки", plural: "очистков"},
                 ]
             },
+            words_set_11: {
+                title: "Падежный диктант 11",
+                instruction: "Напишите слово в родительном падеже множественного числа",
+                words: [
+                    {singular: "буряты", plural: "бурят"},
+                    {singular: "увечье", plural: "увечий"},
+                    {singular: "платье", plural: "платьев"},
+                    {singular: "ясли", plural: "яслей"},
+                    {singular: "грабли", plural: "граблей"},
+                    {singular: "копье", plural: "копий"},
+                    {singular: "сердце", plural: "сердец"},
+                    {singular: "гусары", plural: "гусар"},
+                    {singular: "солдаты", plural: "солдат"},
+                    {singular: "монголы", plural: "монголов"},
+                    {singular: "яблоки", plural: "яблок"},
+                    {singular: "погоны", plural: "погон"},
+                    {singular: "бананы", plural: "бананов"},
+                    {singular: "копытце", plural: "копытец"},
+                    {singular: "хорваты", plural: "хорватов"},
+                    {singular: "оконце", plural: "оконцев"},
+                    {singular: "гренадеры", plural: "гренадер"},
+                    {singular: "ананасы", plural: "ананасов"},
+                    {singular: "валенки", plural: "валенок"},
+                    {singular: "шорты", plural: "шорт"},
+                    {singular: "румыны", plural: "румын"},
+                    {singular: "татары", plural: "татар"},
+                    {singular: "рельсы", plural: "рельсов"},
+                    {singular: "баклажаны", plural: "баклажанов"},
+                    {singular: "гетры", plural: "гетр"},
+                ]
+            },
         };
     }
 
