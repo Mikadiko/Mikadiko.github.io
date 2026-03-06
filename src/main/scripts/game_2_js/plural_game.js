@@ -157,42 +157,6 @@ class PluralGame {
                     {singular: "сиденье", plural: "сидений"},
                 ]
             },
-            words_set_5: {
-                title: "Падежный диктант 5",
-                instruction: "Напишите слово в дательном падеже множественного числа",
-                words: [
-                    {singular: "породе", plural: "породам"},
-                    {singular: "капле", plural: "каплям"},
-                    {singular: "армии", plural: "армиям"},
-                    {singular: "разине", plural: "разиням"},
-                    {singular: "сынишке", plural: "сынишкам"},
-                    {singular: "дивану", plural: "диванам"},
-                    {singular: "февралю", plural: "февралям"},
-                    {singular: "колену", plural: "коленам"},
-                    {singular: "рыси", plural: "рысям"},
-                    {singular: "трости", plural: "тростям"},
-                    {singular: "двери", plural: "дверям"},
-                    {singular: "пути", plural: "путям"},
-                    {singular: "стремени", plural: "стременам"},
-                ]
-            },
-
-            words_set_6: {
-                title: "Падежный диктант 6",
-                instruction: "Напишите слово в творительном падеже множественного числа",
-                words: [
-                    {singular: "сёстры", plural: "сёстрами"},
-                    {singular: "сказки", plural: "сказками"},
-                    {singular: "братья", plural: "братьями"},
-                    {singular: "моря", plural: "морями"},
-                    {singular: "кисти", plural: "кистями"},
-                    {singular: "временем", plural: "временами"},
-                    {singular: "полотенцем", plural: "полотенцами"},
-                    {singular: "океаном", plural: "океанами"},
-                    {singular: "тюленем", plural: "тюленями"},
-                    {singular: "грамотой", plural: "грамотами"},
-                ]
-            },
             words_set_7: {
                 title: "Падежный диктант 7",
                 instruction: "Напишите слово в родительном падеже множественного числа",
