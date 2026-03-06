@@ -157,8 +157,8 @@ class PluralGame {
                     {singular: "сиденье", plural: "сидений"},
                 ]
             },
-            words_set_7: {
-                title: "Падежный диктант 7",
+            words_set_5: {
+                title: "Падежный диктант 5",
                 instruction: "Напишите слово в родительном падеже множественного числа",
                 words: [
                     {singular: "абрикос", plural: "абрикосов"},
@@ -178,8 +178,8 @@ class PluralGame {
                     {singular: "томат", plural: "томатов"},
                 ]
             },
-            words_set_8: {
-                title: "Падежный диктант 8",
+            words_set_6: {
+                title: "Падежный диктант 6",
                 instruction: "Напишите слово в родительном падеже множественного числа",
                 words: [
                     {singular: "армяне", plural: "армян"},
@@ -200,8 +200,8 @@ class PluralGame {
                     {singular: "узбеки", plural: "узбеков"},
                 ]
             },
-            words_set_9: {
-                title: "Падежный диктант 9",
+            words_set_7: {
+                title: "Падежный диктант 7",
                 instruction: "Напишите слово в родительном падеже множественного числа",
                 words: [
                     {singular: "гнездовье", plural: "гнездовий"},
@@ -234,8 +234,8 @@ class PluralGame {
                     {singular: "низовье", plural: "низовьев"},
                 ]
             },
-            words_set_10: {
-                title: "Падежный диктант 10",
+            words_set_8: {
+                title: "Падежный диктант 8",
                 instruction: "Напишите слово в родительном падеже множественного числа",
                 words: [
                     {singular: "блюдце", plural: "блюдец"},
@@ -253,8 +253,8 @@ class PluralGame {
                     {singular: "очистки", plural: "очистков"},
                 ]
             },
-            words_set_11: {
-                title: "Падежный диктант 11",
+            words_set_9: {
+                title: "Падежный диктант 9",
                 instruction: "Напишите слово в родительном падеже множественного числа",
                 words: [
                     {singular: "буряты", plural: "бурят"},
