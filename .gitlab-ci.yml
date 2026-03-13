@@ -8,7 +8,15 @@ image:
   name: node:lts
   pull_policy: if-not-present
 create-pages:
+  variables:
+    NPM_CONFIG_REGISTRY: "https://registry.npmmirror.com/"
+    NPM_CONFIG_CACHE: ".npm"
+    NPM_CONFIG_TIMEOUT: "60000"
+    NPM_CONFIG_PREFER_OFFLINE: "true"
+    NPM_CONFIG_AUDIT: "false"
+    NPM_CONFIG_LOGLEVEL: "error"
   before_script:
+    - mkdir -p .npm  
     - npm config set registry https://registry.npmmirror.com/
     - npm config set cache .npm
     - npm config set timeout 60000
