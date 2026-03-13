@@ -3,7 +3,7 @@
     pull_policy: if-not-present
   create-pages:
     script:
-      - npm install
+      - npm ci
       - npm run build
     pages:
       publish: dist
