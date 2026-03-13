@@ -17,9 +17,6 @@ create-pages:
     NPM_CONFIG_LOGLEVEL: "error"
   before_script:
     - mkdir -p .npm  
-    - npm config set registry https://registry.npmmirror.com/
-    - npm config set cache .npm
-    - npm config set timeout 60000
   script:
     - npm ci --prefer-offline --no-audit --loglevel=error
     - npm run build
