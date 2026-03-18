@@ -142,7 +142,7 @@ class VocabularyDictation {
                     { word: 'маленькая щ_лка', answer: 'е' },
                     { word: 'намеренный подж_г', answer: 'о' },
                     { word: 'крепкая беч_вка', answer: 'е' },
-                    { word: 'тяжелый ожог', answer: 'о' },
+                    { word: 'тяжелый ож_г', answer: 'о' },
                     { word: 'мягкая ш_рстка', answer: 'е' },
                     { word: 'парч_вый', answer: 'о' },
                     { word: 'вещ_вой', answer: 'е' },
